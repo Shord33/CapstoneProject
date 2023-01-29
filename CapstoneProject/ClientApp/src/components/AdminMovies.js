@@ -100,6 +100,7 @@ const AdminMovies = () => {
             })
             .catch(error => console.log(error));
     }
+    //Function to handle Posting data to database through API call
     const handleSave = () => {
         const data = {
             "title": title,
@@ -122,6 +123,8 @@ const AdminMovies = () => {
             })
             .catch(error => console.log(error));
     }
+
+    //Function to reset all input boxes
     const clear = () => {
         setTitle(' ');
         setDescription(' ');
@@ -134,13 +137,12 @@ const AdminMovies = () => {
         setEditRating(0);
         setEditPosterId(0);
     }
-    const handleClick = (value) => {
-        setRating(value);
-    };
+
     return (
         <div>
             <ToastContainer />
             {/*Input form for Create function*/}
+            <h3>Create New Movie</h3>
             <Row>
                 <Col>
                     <input type="text" className="form-control" placeholder="Enter Movie Title" value={title} onChange={(e) => setTitle(e.target.value)}></input>

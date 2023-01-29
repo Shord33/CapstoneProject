@@ -10,6 +10,7 @@ import StarTrack4 from '../images/movies/StarTreck4.png';
 import Superman4 from '../images/movies/Superman4.png';
 import Error from '../images/movies/no-image.png';
 
+//Array to call images to other components
 const MovieImageArr = [
     { id: 0, image: Error },
     { id: 1, image: Godfather },
