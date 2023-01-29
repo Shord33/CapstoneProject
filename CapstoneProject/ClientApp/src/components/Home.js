@@ -4,23 +4,48 @@ export class Home extends Component {
   static displayName = Home.name;
 
   render() {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
-    );
+      return (
+          <div style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80')",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              height: "100vh",
+              textAlign: "center",
+              padding: "2em"
+          }}>
+              <h1 style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: "3em",
+                  color: "white",
+                  textShadow: "2px 2px #333"
+              }}>Hello there!</h1>
+              <p style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "1.5em",
+                  color: "white",
+                  textShadow: "1px 1px #333"
+              }}>Welcome to the Movie Website!</p>
+              <p style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "1.2em",
+                  color: "white",
+                  textShadow: "1px 1px #333"
+              }}>This website is a simple showcase of what a user and admin experience might be like. As the role login was not successfully implemented, there are 2 sections which can be accessed to demo the functions instead.</p>
+              <p style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "1.2em",
+                  color: "white",
+                  textShadow: "1px 1px #333"
+              }}>This web app uses React as the front end and ASP.Net API asa the back end for the server calls to the MSSQL Server database.</p>
+              <p style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "1.2em",
+                  color: "white",
+                  textShadow: "1px 1px #333"
+              }}>The "Admin Movies" section represents the expected view of an admin which involves the CRUD functions for movies. The "User Movies" section represents the expected view of a regular user which can view the list of available movies.</p>
+          </div>
+      );
+
   }
 }
