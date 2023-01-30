@@ -31,7 +31,7 @@ export class Home extends Component {
                   fontSize: "1.2em",
                   color: "white",
                   textShadow: "1px 1px #333"
-              }}>This website is a simple showcase of what a user and admin experience might be like. As the role login was not successfully implemented, there are 2 sections which can be accessed to demo the functions instead.</p>
+              }}>This website is a simple showcase of what a user and admin experience might be like. As the role login was not successfully implemented, there are 2 sections which can be accessed to demo the functions instead. Login and regsiter users function are working correctly to add and authenticate the users</p>
               <p style={{
                   fontFamily: "'Open Sans', sans-serif",
                   fontSize: "1.2em",
