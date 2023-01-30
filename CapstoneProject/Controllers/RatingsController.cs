@@ -7,52 +7,51 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CapstoneProject.Data;
 using CapstoneProject.Models;
-
 namespace CapstoneProject.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class RatingsController : ControllerBase
     {
         private readonly WebsiteContext _context;
 
-        public UsersController(WebsiteContext context)
+        public RatingsController(WebsiteContext context)
         {
             _context = context;
         }
 
-        // GET: api/Users
+        // GET: api/Movies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Ratings>>> GetRatings()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Ratings.ToListAsync();
         }
 
-        // GET: api/Users/5
+        // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<Ratings>> GetMovies(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var ratings = await _context.Ratings.FindAsync(id);
 
-            if (user == null)
+            if (ratings == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return ratings;
         }
 
-        // PUT: api/Users/5
+        // PUT: api/Movies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> PutRatings(int id, Ratings ratings)
         {
-            if (id != user.UserId)
+            if (id != ratings.RatingId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(ratings).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +59,7 @@ namespace CapstoneProject.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(id))
+                if (!RatingsExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +72,36 @@ namespace CapstoneProject.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
+        // POST: api/Movies
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<Ratings>> PostRatings(Ratings ratings)
         {
-            _context.Users.Add(user);
+            _context.Ratings.Add(ratings);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+            return CreatedAtAction("GetRatings", new { id = ratings.RatingId }, ratings);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/Movies/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
+        public async Task<IActionResult> DeleteRatings(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var ratings = await _context.Ratings.FindAsync(id);
+            if (ratings == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.Ratings.Remove(ratings);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool UserExists(int id)
+        private bool RatingsExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return _context.Ratings.Any(e => e.RatingId == id);
         }
     }
 }

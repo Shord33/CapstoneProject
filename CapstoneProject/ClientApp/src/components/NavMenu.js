@@ -5,7 +5,6 @@ import './NavMenu.css';
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
-
   constructor (props) {
     super(props);
 
@@ -19,7 +18,8 @@ export class NavMenu extends Component {
     this.setState({
       collapsed: !this.state.collapsed
     });
-  }
+    }
+    
 
   render() {
     return (
@@ -37,6 +37,21 @@ export class NavMenu extends Component {
                 </NavItem>
                 <NavItem>
                     <NavLink tag={Link} className="text-dark" to="/User-Movies">User Movies</NavLink>
+                </NavItem>
+                 <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/Register">Register</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/Login">Login</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/Admin-Users">Users List</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/Admin-Add-User">Add Users</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/Add-Ratings">Add Ratings</NavLink>
                 </NavItem>
             </ul>
           </Collapse>

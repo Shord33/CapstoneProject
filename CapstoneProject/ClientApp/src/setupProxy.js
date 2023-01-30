@@ -9,7 +9,8 @@ const context =  [
     "/item",
     "/Employees",
     "/Movies",
-    "/Users"
+    "/Auth",
+    "/Ratings"
 ];
 
 module.exports = function(app) {

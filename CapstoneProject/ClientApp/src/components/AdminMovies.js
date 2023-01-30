@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'react-toastify/dist/ReactToastify.css';
+import './MovieCard.css';
 import { toast, ToastContainer } from 'react-toastify';
 
 const AdminMovies = () => {
@@ -145,9 +146,11 @@ const AdminMovies = () => {
             <h3>Create New Movie</h3>
             <Row>
                 <Col>
+                    <label>Movie Title</label>
                     <input type="text" className="form-control" placeholder="Enter Movie Title" value={title} onChange={(e) => setTitle(e.target.value)}></input>
                 </Col>
                 <Col>
+                    <label>Genres</label>
                     <input type="text" className="form-control" placeholder="Enter Genre" value={genre} onChange={(e) => setGenre(e.target.value)}></input>
                 </Col>
                 <Col>
@@ -159,6 +162,7 @@ const AdminMovies = () => {
             <br></br>
             <Row>
                 <Col>
+                    <label>Description</label>
                     <input type="text" className="form-control" placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)}></input>
                 </Col>
                 <br></br>
@@ -211,9 +215,11 @@ const AdminMovies = () => {
                 <Modal.Body>
                     <Row>
                         <Col>
+                            <label>Title</label>
                             <input type="text" className="form-control" placeholder="Enter Movie Title" value={editTitle} onChange={(e) => setEditTitle(e.target.value)}></input>
                         </Col>
                         <Col>
+                            <label>Genres</label>
                             <input type="text" className="form-control" placeholder="Enter Genre" value={editGenre} onChange={(e) => setEditGenre(e.target.value)}></input>
                         </Col>
                         <Col>
@@ -224,6 +230,7 @@ const AdminMovies = () => {
                     <br></br>
                     <Row>
                         <Col>
+                            <label>Description</label>
                             <input type="text" className="form-control" placeholder="Enter Description" value={editDescription} onChange={(e) => setEditDescription(e.target.value)}></input>
                         </Col>
                         <br></br>
