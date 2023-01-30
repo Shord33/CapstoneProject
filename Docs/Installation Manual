@@ -1,0 +1,6 @@
+Installation:
+
+-ensure local device has an installed sql server
+-Change the connection string in the appsettings.json file to the appropriate string for local sql server
+-Run the provided sql script in the local server to add the database for the movie website
+-Launch website in Visual Studio with IIS Server 
